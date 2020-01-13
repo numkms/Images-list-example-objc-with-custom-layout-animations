@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) UIImageView* imageView;
 @property (class, nonatomic, copy) NSString *reuseIdentifier;
 - (void) fillBy: (NSString*)imageUrl;
 @end
