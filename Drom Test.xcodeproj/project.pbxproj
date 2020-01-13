@@ -15,6 +15,8 @@
 		5EBE731723CC6A30004A8EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE731623CC6A30004A8EDE /* Assets.xcassets */; };
 		5EBE731A23CC6A30004A8EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE731823CC6A30004A8EDE /* LaunchScreen.storyboard */; };
 		5EBE731D23CC6A30004A8EDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE731C23CC6A30004A8EDE /* main.m */; };
+		5EBE732523CC6C22004A8EDE /* CollectionViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */; };
+		5EBE732A23CC7723004A8EDE /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		5EBE731923CC6A30004A8EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EBE731B23CC6A30004A8EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EBE731C23CC6A30004A8EDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAdapter.m; sourceTree = "<group>"; };
+		5EBE732623CC73B3004A8EDE /* CollectionViewAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAdapter.h; sourceTree = "<group>"; };
+		5EBE732823CC7723004A8EDE /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,8 @@
 		5EBE730623CC6A2E004A8EDE /* Drom Test */ = {
 			isa = PBXGroup;
 			children = (
+				5EBE732723CC76DF004A8EDE /* Views */,
+				5EBE732323CC6BEE004A8EDE /* Core */,
 				5EBE730723CC6A2E004A8EDE /* AppDelegate.h */,
 				5EBE730823CC6A2E004A8EDE /* AppDelegate.m */,
 				5EBE730A23CC6A2E004A8EDE /* SceneDelegate.h */,
@@ -77,6 +85,24 @@
 				5EBE731323CC6A2E004A8EDE /* Drom_Test.xcdatamodeld */,
 			);
 			path = "Drom Test";
+			sourceTree = "<group>";
+		};
+		5EBE732323CC6BEE004A8EDE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */,
+				5EBE732623CC73B3004A8EDE /* CollectionViewAdapter.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5EBE732723CC76DF004A8EDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE732823CC7723004A8EDE /* ImageCollectionViewCell.h */,
+				5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBE732523CC6C22004A8EDE /* CollectionViewAdapter.m in Sources */,
+				5EBE732A23CC7723004A8EDE /* ImageCollectionViewCell.m in Sources */,
 				5EBE731D23CC6A30004A8EDE /* main.m in Sources */,
 				5EBE730F23CC6A2E004A8EDE /* ViewController.m in Sources */,
 				5EBE730923CC6A2E004A8EDE /* AppDelegate.m in Sources */,
