@@ -14,17 +14,20 @@
 
 -(id)initWithTableView: (UICollectionView*) collectionView {
   if (self = [super init]) {
-      
-      NSLog(@"%@", collectionView);
-      
-      [collectionView registerClass: ImageCollectionViewCell.class forCellWithReuseIdentifier:ImageCollectionViewCell.reuseIdentifier ];
-      
       _collectionView = collectionView;
       
+      [collectionView registerClass: ImageCollectionViewCell.class forCellWithReuseIdentifier:ImageCollectionViewCell.reuseIdentifier ];
       [collectionView setDataSource: self];
       [collectionView setDelegate: self];
+      
+      _imagesRepository = [[ImagesRepository alloc] init];
   }
   return self;
+}
+
+- (void) setUrls: (NSArray*) urls {
+    _urls = urls;
+    [_collectionView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
@@ -32,13 +35,17 @@
 }
  
 - (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return _urls.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
    ImageCollectionViewCell* newCell = [collectionView dequeueReusableCellWithReuseIdentifier:ImageCollectionViewCell.reuseIdentifier forIndexPath:indexPath];
-    [newCell fillBy:@"http://some.url"];
+    NSString *currentUrl = _urls[indexPath.row];
+     [newCell fillBy: NULL];
+     [_imagesRepository getImageBy: currentUrl completionHandler:^(NSData *array) {
+           [newCell fillBy: array];
+     }];
    return newCell;
 }
 
@@ -51,10 +58,23 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
+
 - (CGFloat)collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger) section
 {
     return 1.0;
 }
+ - (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+     NSMutableArray *mutableArray =  [NSMutableArray arrayWithArray:_urls];;
+     [mutableArray removeObjectAtIndex: indexPath.row];
+     _urls = mutableArray;
+     [_collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexPath.row inSection:indexPath.section]]];
+     
+     
+}
 
 @end
+
+
+

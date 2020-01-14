@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EBA676E23CE1374006E88EE /* ImagesCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA676D23CE1374006E88EE /* ImagesCollectionViewLayout.m */; };
 		5EBE730923CC6A2E004A8EDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE730823CC6A2E004A8EDE /* AppDelegate.m */; };
 		5EBE730C23CC6A2E004A8EDE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE730B23CC6A2E004A8EDE /* SceneDelegate.m */; };
 		5EBE730F23CC6A2E004A8EDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE730E23CC6A2E004A8EDE /* ViewController.m */; };
@@ -17,9 +18,14 @@
 		5EBE731D23CC6A30004A8EDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE731C23CC6A30004A8EDE /* main.m */; };
 		5EBE732523CC6C22004A8EDE /* CollectionViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */; };
 		5EBE732A23CC7723004A8EDE /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */; };
+		5EBE732E23CCB2C0004A8EDE /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE732D23CCB2C0004A8EDE /* Downloader.m */; };
+		5EBE733223CCB4D7004A8EDE /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE733123CCB4D7004A8EDE /* Cache.m */; };
+		5EBE733523CCBECA004A8EDE /* ImagesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE733423CCBECA004A8EDE /* ImagesRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EBA676D23CE1374006E88EE /* ImagesCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesCollectionViewLayout.m; sourceTree = "<group>"; };
+		5EBA677023CE13A6006E88EE /* ImagesCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesCollectionViewLayout.h; sourceTree = "<group>"; };
 		5EBE730423CC6A2E004A8EDE /* Drom Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drom Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE730723CC6A2E004A8EDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE730823CC6A2E004A8EDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,6 +43,12 @@
 		5EBE732623CC73B3004A8EDE /* CollectionViewAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAdapter.h; sourceTree = "<group>"; };
 		5EBE732823CC7723004A8EDE /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		5EBE732D23CCB2C0004A8EDE /* Downloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
+		5EBE732F23CCB2CE004A8EDE /* Downloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		5EBE733123CCB4D7004A8EDE /* Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		5EBE733323CCB4F3004A8EDE /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		5EBE733423CCBECA004A8EDE /* ImagesRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesRepository.m; sourceTree = "<group>"; };
+		5EBE733623CCBED7004A8EDE /* ImagesRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesRepository.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +102,9 @@
 		5EBE732323CC6BEE004A8EDE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */,
-				5EBE732623CC73B3004A8EDE /* CollectionViewAdapter.h */,
+				5EBE732C23CCB292004A8EDE /* Network */,
+				5EBE733023CCB3DA004A8EDE /* Service */,
+				5EBE732B23CCB217004A8EDE /* Adapters */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -99,10 +112,49 @@
 		5EBE732723CC76DF004A8EDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EBE733723CCF54F004A8EDE /* Layout */,
 				5EBE732823CC7723004A8EDE /* ImageCollectionViewCell.h */,
 				5EBE732923CC7723004A8EDE /* ImageCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5EBE732B23CCB217004A8EDE /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE732423CC6C22004A8EDE /* CollectionViewAdapter.m */,
+				5EBE732623CC73B3004A8EDE /* CollectionViewAdapter.h */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		5EBE732C23CCB292004A8EDE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE732D23CCB2C0004A8EDE /* Downloader.m */,
+				5EBE732F23CCB2CE004A8EDE /* Downloader.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5EBE733023CCB3DA004A8EDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE733123CCB4D7004A8EDE /* Cache.m */,
+				5EBE733323CCB4F3004A8EDE /* Cache.h */,
+				5EBE733423CCBECA004A8EDE /* ImagesRepository.m */,
+				5EBE733623CCBED7004A8EDE /* ImagesRepository.h */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5EBE733723CCF54F004A8EDE /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				5EBA676D23CE1374006E88EE /* ImagesCollectionViewLayout.m */,
+				5EBA677023CE13A6006E88EE /* ImagesCollectionViewLayout.h */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,12 +227,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBE733223CCB4D7004A8EDE /* Cache.m in Sources */,
 				5EBE732523CC6C22004A8EDE /* CollectionViewAdapter.m in Sources */,
 				5EBE732A23CC7723004A8EDE /* ImageCollectionViewCell.m in Sources */,
+				5EBA676E23CE1374006E88EE /* ImagesCollectionViewLayout.m in Sources */,
 				5EBE731D23CC6A30004A8EDE /* main.m in Sources */,
 				5EBE730F23CC6A2E004A8EDE /* ViewController.m in Sources */,
 				5EBE730923CC6A2E004A8EDE /* AppDelegate.m in Sources */,
 				5EBE730C23CC6A2E004A8EDE /* SceneDelegate.m in Sources */,
+				5EBE733523CCBECA004A8EDE /* ImagesRepository.m in Sources */,
+				5EBE732E23CCB2C0004A8EDE /* Downloader.m in Sources */,
 				5EBE731523CC6A2E004A8EDE /* Drom_Test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,9 +10,13 @@
 #define CollectionViewAdapter_h
 
 #import <Foundation/Foundation.h>
+#import "ImagesRepository.h"
 
 @interface CollectionViewAdapter : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
 @property UICollectionView *collectionView;
+@property NSArray *urls;
+@property ImagesRepository *imagesRepository;
+
 -(id)initWithTableView: (UICollectionView*) collectionView;
 @end
 

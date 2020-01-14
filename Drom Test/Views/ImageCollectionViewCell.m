@@ -20,6 +20,10 @@ static NSString *ReuseIdentifier = @"imageCollectionViewCell";
         _imageView = [[UIImageView alloc] initWithFrame: CGRectZero];
         
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        _imageView.clipsToBounds = YES;
+        
+        _imageView.contentMode = UIViewContentModeScaleToFill;
         
         [self.contentView addSubview:_imageView];
         
@@ -70,14 +74,13 @@ static NSString *ReuseIdentifier = @"imageCollectionViewCell";
     return ReuseIdentifier;
 }
 
-
 + (void)setReuseIdentifier:(NSString *)reuseIdentifier {
-    
+    //Для того чтобы варнинг не горел :)
 }
 
-- (void) fillBy: (NSString*)imageUrl {
-    self.backgroundColor = UIColor.grayColor;
-    [self.imageView setImage: UIImage.addImage];
+- (void) fillBy: (NSData*) imageData {
+    [self.imageView setImage: NULL];
+    [self.imageView setImage:[[UIImage alloc] initWithData: imageData]];
 }
 
 @end
